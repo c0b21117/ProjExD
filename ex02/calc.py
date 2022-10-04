@@ -1,7 +1,6 @@
 from calendar import c
 import numbers
 import tkinter as tk
-import tkinter.messagebox as tkm
 
 def click_number(event):#ボタンを押した時入力する関数
     btn = event.widget
