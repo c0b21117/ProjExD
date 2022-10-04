@@ -7,16 +7,14 @@ def click_number(event):#ボタンを押した時入力する関数
     num = btn["text"]
     entry.insert(tk.END, num)
 
-
 def click_equal(event):#=を押したときに答えを出す関数
     eqn = entry.get()
     res = eval(eqn)
     entry.delete(0, tk.END)
     entry.insert(tk.END, res)
 
-def click_clear(event):
+def click_clear(event):#[C]オールクリアのボタンの関数
     entry.delete(0,tk.END)
-
 
 root = tk.Tk()
 root.geometry("500x500")
@@ -48,6 +46,7 @@ btn = tk.Button(root, text=f"=", font=("", 20), width=4, height=2)
 btn.bind("<1>", click_equal)
 btn.grid(row=r, column=c+3)
 
+#オールクリアのボタンの生成
 btn = tk.Button(root, text=f"C", font=("", 20), width=4, height=2)
 btn.bind("<1>", click_clear)
 btn.grid(row=0, column=5)
