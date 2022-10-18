@@ -27,7 +27,7 @@ def main_proc():
         mx -= 1
     if key == "Right":
         mx += 1
-    if key == "p":
+    if key == "p":#追加機能　p　でランダムに移動
             a = random.randint(0,2)
             b = random.randint(0,2)
             if a == 1:
