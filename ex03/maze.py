@@ -25,9 +25,9 @@ def main_proc():
         my += 1
     if key == "Left":
         mx -= 1
-    #if key == "Right":
-        #mx += 1
     if key == "Right":
+        mx += 1
+    if key == "p":
             a = random.randint(0,2)
             b = random.randint(0,2)
             if a == 1:
@@ -50,9 +50,9 @@ def main_proc():
             my -= 1
         if key == "Left":
             mx += 1
-        #if key == "Right":
-            #mx -= 1
         if key == "Right":
+            mx -= 1
+        if key == "p":
             if a == 1:
                 if b == 1:
                     mx -= 1
