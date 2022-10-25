@@ -85,7 +85,7 @@ def main():
                 tori_rct.centery -= 1
 
         if key_states[pg.K_a]:#「追加」aを押すとこうかとんが加速するコード
-            #コメントで画面外に出てしまう欠陥があったがなおせませんでした
+            #コメントで画面外に出てしまう欠陥があったがなおせなかった
             if a == 0:
                 tori_rct.centery -= 2
             if a == 2:
