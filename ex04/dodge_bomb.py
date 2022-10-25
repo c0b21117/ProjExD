@@ -9,7 +9,7 @@ def check_bound(obj_rct, scr_rct):
     領域内：+1／領域外：-1
     """
     yoko, tate = +1, +1
-    global count
+    global count#追加：爆弾が跳ねるたびに加速していく（8回まで）
     if obj_rct.left < scr_rct.left or scr_rct.right < obj_rct.right: 
         if count<8:
             yoko = -1.2
@@ -84,7 +84,8 @@ def main():
             if key_states[pg.K_DOWN]:
                 tori_rct.centery -= 1
 
-        if key_states[pg.K_a]:
+        if key_states[pg.K_a]:#「追加」aを押すとこうかとんが加速するコード
+            #コメントで画面外に出てしまう欠陥があったがなおせませんでした
             if a == 0:
                 tori_rct.centery -= 2
             if a == 2:
@@ -109,6 +110,7 @@ def main():
             tori_sfc = pg.image.load("fig/1.png")
             tori_rct = tori_sfc.get_rect()
             tori_rct.center = tori_rct.centerx, tori_rct.centery
+            #「追加」着弾するとGAMEOVERが表示される
             pg.display.update()
             text = font.render("GAMEOVER", True, (0,0,0))
             scrn_sfc.blit(text,[200,400])
