@@ -107,6 +107,9 @@ def main():
         # 練習8
         if tori_rct.colliderect(bomb_rct): # こうかとんrctが爆弾rctと重なったら
             tori_sfc = pg.image.load("fig/1.png")
+            tori_rct = tori_sfc.get_rect()
+            tori_rct.center = tori_rct.centerx, tori_rct.centery
+            pg.display.update()
             text = font.render("GAMEOVER", True, (0,0,0))
             scrn_sfc.blit(text,[200,400])
             pg.display.update()
