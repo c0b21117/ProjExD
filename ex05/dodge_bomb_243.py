@@ -68,12 +68,12 @@ class Bomb:
         self.blit(scr) # =scr.sfc.blit(self.sfc, self.rct)
 
 
-class Text:
+class Text:# テキストを出力させるクラス
 
-    def __init__(self,text,color,size):
+    def __init__(self,text,color,basyo):
         self.text = text
         self.color = color
-        self.size = size
+        self.size = basyo
     
     def blit(self, scr:Screen):
         font = pg.font.Font(None,300)
@@ -108,7 +108,7 @@ def main():
     bkd = Bomb((255, 0, 0), 10, (+1, +1), scr)
 
     # 追加
-    tex = Text("GAMEOVER",(0,0,0),(200,400))
+    tex = Text("GAMEOVER",(0,0,0),(200,400)) # 追加
 
     clock = pg.time.Clock() # 練習1
     while True:
