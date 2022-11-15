@@ -5,7 +5,6 @@ import sys
 import tkinter
 from random import randint
 from itertools import count
-import maze_maker as mm # 練習8
 import os
 
 class Screen:
@@ -83,6 +82,8 @@ class Enemy:
         self.blit(scr) # =scr.sfc.blit(self.sfc, self.rct)
 
 class Map:
+    global mlist
+    mlist = []
     map =[[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
            [1,0,1,1,1,1,1,1,1,1,0,0,0,1,1,1,1,1,1,1],
            [1,0,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1],
@@ -106,6 +107,12 @@ class Map:
         for i in range(self.row):
             for j in range(self.col):
                 screen.blit(self.imgs[self.map[i][j]], (j*self.msize,i*self.msize))
+
+    for i in range(len(map)):
+        for j in range(len(map[0])):
+            for k in map[i][j]:
+                if k == 0:
+                    mlist.__add__(i,j)
 
 def check_bound(obj_rct, scr_rct):
     """
